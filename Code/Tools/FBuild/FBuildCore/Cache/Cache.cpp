@@ -1,6 +1,5 @@
 // Cache - Default cache implementation
 //------------------------------------------------------------------------------
-
 // Incldues
 //------------------------------------------------------------------------------
 #include "Cache.h"
@@ -19,6 +18,7 @@
 #include "Core/Time/Time.h"
 #include "Core/Time/Timer.h"
 #include "Core/Tracing/Tracing.h"
+
 
 // CacheStats
 //------------------------------------------------------------------------------
@@ -98,7 +98,6 @@ public:
 {
     AStackString<> fullPath;
     GetFullPathForCacheEntry( cacheId, fullPath );
-
     // make sure the cache output path exists
     if ( !FileIO::EnsurePathExistsForFile( fullPath ) )
     {
@@ -113,7 +112,6 @@ public:
     {
         return false;
     }
-
     // write data
     const bool cacheTmpWriteOk = ( cacheTmpFile.Write( data, dataSize ) == dataSize );
     cacheTmpFile.Close();
@@ -371,14 +369,11 @@ void Cache::GetFullPathForCacheEntry( const AString & cacheId,
                                       AString & outFullPath ) const
 {
     // format example: N:\\fbuild.cache\\AA\\BB\\<ABCD.......>
-    outFullPath.Format( "%s%c%c%c%c%c%c%s", m_CachePath.Get(),
-                                            cacheId[ 0 ],
-                                            cacheId[ 1 ],
-                                            NATIVE_SLASH,
-                                            cacheId[ 2 ],
-                                            cacheId[ 3 ],
+    outFullPath.Format( "%s%c%s", m_CachePath.Get(),
+    //outFullPath.Format( "%s%c%c%c%c%c%c%s", m_CachePath.Get(),
                                             NATIVE_SLASH,
                                             cacheId.Get() );
+                                       
 }
 
 //------------------------------------------------------------------------------

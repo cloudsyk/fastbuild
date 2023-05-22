@@ -17,7 +17,7 @@ class AString;
 class Network
 {
 public:
-    static void GetHostName( AString & hostName );
+    static void GetHostName( AString & hostName , bool useIpInstead = true);
     static void GetDomainName( AString & domainName );
     static void GetIPv4Addresses( Array<AString> & outAddresses );
     static uint32_t GetHostIPFromName( const AString & hostName, uint32_t timeoutMS = 1000 );

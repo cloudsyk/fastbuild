@@ -47,8 +47,8 @@ WorkerWindow::WorkerWindow()
     , m_Menu( nullptr )
 {
     // center the window on screen
-    const uint32_t w = 700;
-    const uint32_t h = 300;
+    const uint32_t w = 1000;
+    const uint32_t h = 600;
     const int32_t x = (int32_t)( GetPrimaryScreenWidth() - w );
     const int32_t y = 0;
 

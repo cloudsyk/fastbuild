@@ -128,7 +128,7 @@ int32_t Worker::Work()
     {
         // Create UI
         m_MainWindow = FNEW( WorkerWindow() );
-        m_MainWindow->SetStatus( m_WorkerBrokerage.GetHostName(), AStackString<>( "Idle" ) );
+        m_MainWindow->SetStatus( m_WorkerBrokerage.GetIPAddress(), AStackString<>( "Idle" ) );
     }
 
     // spawn work thread
@@ -399,7 +399,7 @@ void Worker::UpdateUI()
     }
     else
     {
-        m_MainWindow->SetStatus( m_WorkerBrokerage.GetHostName(), status );
+        m_MainWindow->SetStatus( m_WorkerBrokerage.GetIPAddress(), status );
     }
 
     if ( InConsoleMode() == false )

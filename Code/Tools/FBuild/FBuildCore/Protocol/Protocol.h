@@ -6,7 +6,7 @@
 //------------------------------------------------------------------------------
 #include "Core/Env/MSVCStaticAnalysis.h"
 #include "Core/Env/Types.h"
-
+#include "Core/Network/Network.h"
 // Forward Declarations
 //------------------------------------------------------------------------------
 class ConnectionInfo;

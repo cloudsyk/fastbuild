@@ -109,9 +109,15 @@ Protocol::MsgConnection::MsgConnection( uint32_t numJobsAvailable )
 {
     memset( m_Padding2, 0, sizeof( m_Padding2 ) );
     memset( m_HostName, 0, sizeof( m_HostName ) );
-    if ( ::gethostname( m_HostName, 64 ) != 0 )
+    AString tmpStr;
+    Network::GetHostName( tmpStr ) ;
+    //if ( != 0 )
     {
-        AString::Copy( "Unavailable", m_HostName, 12 ); // inc terminator in copy
+       // AString::Copy( "Unavailable", m_HostName, 12 ); // inc terminator in copy
+    }
+    //else
+    {
+         AString::Copy( tmpStr.Get() , m_HostName, tmpStr.GetLength() );
     }
 }
 

@@ -79,8 +79,8 @@ Compiler( 'Compiler-VS2022-x64' )
                     '$Root$/tbbmalloc.dll' // Required as of 16.2 (14.22.27905)
                     '$Root$/vcruntime140.dll'
                     '$Root$/vcruntime140_1.dll' // Required as of 16.5.1 (14.25.28610)
-                    '$Root$/1033/clui.dll'
-                    '$Root$/1033/mspft140ui.dll' // Localized messages for static analysis
+                    '$Root$/2052/clui.dll'
+                    '$Root$/2052/mspft140ui.dll' // Localized messages for static analysis
                   }
 
     #if ENABLE_LIGHT_CACHE
